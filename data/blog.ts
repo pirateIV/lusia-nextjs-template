@@ -21,37 +21,39 @@ const data = {
       postDate: "Feb 21, 2023",
     },
     {
-      key: "travel-03",
+      key: "travel-04",
+
       title: "Digital Nomad Lifestyle: Working While Exploring the World",
       slug: "digital-nomad-lifestyle-working-while-exploring-the-world",
       postDate: "Feb 20, 2023",
     },
     {
-      key: "travel-04",
+      key: "travel-05",
+
       title: "Hidden Gems: Off-the-Beaten-Path Travel Destinations",
       slug: "hidden-gems-off-the-beaten-path-travel-destinations",
       postDate: "Feb 16, 2023",
     },
     {
-      key: "travel-05",
+      key: "travel-06",
       title: "Traveling on a Budget: Tips and Tricks for Affordable Adventures",
       slug: "traveling-on-a-budget-tips-and-tricks-for-affordable-adventures",
       postDate: "Feb 16, 2023",
     },
     {
-      key: "travel-06",
+      key: "travel-07",
       title: "Culinary Adventures: Exploring Global Cuisine on Your Travels",
       slug: "culinary-adventures-exploring-global-cuisine-on-your-travels",
       postDate: "Feb 13, 2023",
     },
     {
-      key: "travel-07",
+      key: "travel-08",
       title: "Packing Hacks: How to Travel Light and Stress-Free",
       slug: "packing-hacks-how-to-travel-light-and-stress-free",
       postDate: "Feb 13, 2023",
     },
     {
-      key: "travel-08",
+      key: "travel-09",
       title: "Solo Female Travel: Empowering Journeys and Safety Tips",
       slug: "solo-female-travel-empowering-journeys-and-safety-tips",
       postDate: "Feb 8, 2023",

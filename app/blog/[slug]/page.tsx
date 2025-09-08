@@ -1,9 +1,11 @@
 import React from "react";
-import { blogs } from "@/data/blog";
+import { getMDXSlugKey, getPostSlugs } from "@/helpers/post";
 
-function getMDXSlugKey(slug: string) {
-  return blogs.find((blog) => blog.slug === slug)?.key;
-}
+// export async function generateStaticParams() {
+//   return getPostSlugs().map((slug) => {
+//     slug;
+//   });
+// }
 
 export default async function Blog({
   params,
@@ -15,9 +17,13 @@ export default async function Blog({
     `@/content/${getMDXSlugKey(slug)}.mdx`
   );
 
+  console.log(getMDXSlugKey(slug));
+
   return (
-    <article className="prose">
-      <Post />
+    <article className="prose max-w-full flex items-center justify-center px-10 py-7">
+      <div className="max-w-305">
+        <Post />
+      </div>
     </article>
   );
 }
