@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin '@tailwindcss/typography';
 
 :root {
   --background: #ffffff;
@@ -15,7 +16,7 @@
 
   --color-*: initial;
 
-  --color-white: #FFFFFF;
+  --color-white: #ffffff;
   --color-background-dark: #1c2522; /* deep dark gray, main app background */
   --color-text-light: #ffffff; /* pure white, primary text on dark */
   --color-accent-orange: #e38836; /* warm orange, brand/accent */
