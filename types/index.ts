@@ -17,3 +17,11 @@ export type SiteLink = {
   pages: Page[];
   socials: Social[];
 };
+
+export type Blog = {
+  key: string;
+  title: string;
+  slug: string;
+  postDate: Date;
+  description: string;
+};

@@ -1,4 +1,7 @@
-const data = {
+import { sortPostsByDate } from "@/lib/utils";
+import { Blog } from "@/types";
+
+export const data = {
   travel: [
     {
       key: "travel-01",
@@ -244,18 +247,17 @@ const data = {
   ],
 };
 
-export const blogs = [...data.travel, ...data.lifestyle, ...data.destination];
+export const descriptions = {
+  travel:
+    "In our Travel category, we embark on a journey of exploration, sharing personal experiences, tips, and stories from globetrotters passionate about traversing the world's diverse landscapes and cultures.",
+  lifestyle:
+    "Discover the essence of a traveler's lifestyle in this category, where we delve into personal stories, insights, and recommendations from a seasoned globetrotter's perspective. Explore the world of travel, fashion, cuisine, and more through the lens of a dedicated explorer.",
+  destination:
+    "Explore the essence of a traveler's lifestyle in our Destination category, where we delve into personal stories, insights, and recommendations from a seasoned globetrotter's perspective. Discover the world of travel, fashion, cuisine, and more through the lens of a dedicated explorer.",
+};
 
-// // Helper function to sort blogs by date (newest first)
-// export const sortBlogsByDate = (blogsArray) => {
-//   return [...blogsArray].sort((a, b) => b.postDate - a.postDate);
-// };
-
-// // Helper function to format date for display
-// export const formatDate = (date) => {
-//   return date.toLocaleDateString("en-US", {
-//     year: "numeric",
-//     month: "short",
-//     day: "numeric",
-//   });
-// };
+export const blogs: Blog[] = sortPostsByDate([
+  ...data.travel,
+  ...data.lifestyle,
+  ...data.destination,
+]);

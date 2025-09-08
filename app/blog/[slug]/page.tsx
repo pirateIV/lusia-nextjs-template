@@ -1,12 +1,6 @@
 import React from "react";
 import { getMDXSlugKey, getPostSlugs } from "@/helpers/posts";
 
-export async function generateStaticParams() {
-  return getPostSlugs().map((slug) => ({
-    slug: `blog/${slug}`,
-  }));
-}
-
 export default async function Blog({
   params,
 }: {
@@ -24,4 +18,10 @@ export default async function Blog({
       </div>
     </article>
   );
+}
+
+export async function generateStaticParams() {
+  return getPostSlugs().map((slug) => ({
+    slug: `/blog/${slug}`,
+  }));
 }

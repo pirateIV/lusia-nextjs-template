@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { blogs } from "@/data/blog";
-import { formatDate, sortPostsByDate } from "@/helpers/posts";
+import { formatDate } from "@/lib/utils";
 
 export default function Blogs() {
   console.log(blogs.length);
@@ -9,7 +9,7 @@ export default function Blogs() {
     <div className="flex items-center justify-center">
       <div className="max-w-405 px-12.5 py-15">
         <div className="grid grid-cols-3 gap-5">
-          {sortPostsByDate(blogs).map((blog) => (
+          {blogs.map((blog) => (
             <div key={blog.key} className="text-[10px] not-[p]:font-semibold">
               {/* <img src="" className="size-full" alt="" /> */}
               <div className="flex items-center gap-0.5">
