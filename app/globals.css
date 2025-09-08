@@ -9,14 +9,20 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
+  --font-montserrat: var(--font-montserrat);
+  --font-playfair-display: var(--font-playfair-display);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-*: initial;
+
+  --color-white: #FFFFFF;
+  --color-background-dark: #1c2522; /* deep dark gray, main app background */
+  --color-text-light: #ffffff; /* pure white, primary text on dark */
+  --color-accent-orange: #e38836; /* warm orange, brand/accent */
+  --color-text-light-muted: rgba(255, 255, 255, 0.8); /* subtle text on dark */
+  --color-surface-dark: #25211d; /* dark brownish-gray, card/surface */
+  --color-background-light: #f8f7f5; /* off-white, light background */
+  --color-overlay-dark: rgba(37, 33, 29, 0.2); /* transparent overlay/shadow */
 }
 
 body {
