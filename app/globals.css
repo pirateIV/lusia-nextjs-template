@@ -24,6 +24,11 @@
   --color-surface-dark: #25211d; /* dark brownish-gray, card/surface */
   --color-background-light: #f8f7f5; /* off-white, light background */
   --color-overlay-dark: rgba(37, 33, 29, 0.2); /* transparent overlay/shadow */
+
+  --breakpoint-*: initial;
+
+  --breakpoint-md: 810px;
+  --breakpoint-lg: 1199px;
 }
 
 body {

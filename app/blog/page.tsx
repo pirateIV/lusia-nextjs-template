@@ -1,34 +1,18 @@
 import React from "react";
-import Link from "next/link";
 import { blogs } from "@/data/blog";
-import { formatDate } from "@/lib/utils";
+import BlogPostCard from "@/components/blog-post-card";
 
 export default function Blogs() {
-  console.log(blogs.length);
   return (
-    <div className="flex items-center justify-center">
-      <div className="max-w-405 px-12.5 py-15">
-        <div className="grid grid-cols-3 gap-5">
+    <div className="flex items-center justify-center px-12.5 py-15">
+      <div className="max-w-305 w-full">
+        <div className="grid grid-cols-[minmax(100px,1fr)] md:grid-cols-[repeat(2,minmax(100px,1fr))] lg:grid-cols-[repeat(3,minmax(100px,1fr))] gap-5">
           {blogs.map((blog) => (
-            <div key={blog.key} className="text-[10px] not-[p]:font-semibold">
-              {/* <img src="" className="size-full" alt="" /> */}
-              <div className="flex items-center gap-0.5">
-                <span className="text-accent-orange">
-                  {formatDate(blog.postDate)}
-                </span>
-                <span className="h-full w-0.5 bg-accent-orange"></span>
-                <span className="text-accent-orange uppercase">
-                  {blog.key.split("-")[0]}
-                </span>
-              </div>
-              <Link
-                href={`/blog/${blog.slug}`}
-                className="text-[22px] font-playfair-display inline-block hover:underline"
-              >
-                {blog.title}
-              </Link>
-              <p className="text-sm font-normal">{blog.description}</p>
-            </div>
+            <BlogPostCard
+              key={blog.key}
+              category={blog.key.split("-")[0]}
+              blog={blog}
+            />
           ))}
         </div>
       </div>

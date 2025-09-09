@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navbar from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
+import Divider from "@/components/layout/divider";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
@@ -29,9 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.className} ${playfairDisplay.variable} antialiased`}
+        className={`relative ${montserrat.className} ${playfairDisplay.variable} antialiased`}
       >
         <Navbar />
+        <Divider/>
         {children}
         <Footer />
       </body>
