@@ -22,14 +22,14 @@ export default function BlogPostCard({
   // Generate post through the "postId" prop
   return (
     <div
-      className={`flex flex-col text-[10px] gap-2.5 py-3.75 not-[p]:font-semibold w-full ${className}`}
+      className={`group flex flex-col text-[10px] gap-2.5 py-3.75 not-[p]:font-semibold w-full ${className}`}
       {...props}
     >
       <div className="relative aspect-[1.2/1] @3xl:aspect-[1.7/1] shrink-0 overflow-hidden @3xl:w-[250px]">
         <Image
-          src="/images/placeholder.jpg"
+          src={blog.image}
           sizes={imageSize || "calc(min(314px,100vw))"}
-          className="size-full object-cover scale-[115%] hover:scale-100 transition-transform duration-500"
+          className="size-full object-cover scale-[115%] group-hover:scale-100 transition-transform duration-500"
           priority
           fill
           alt=""

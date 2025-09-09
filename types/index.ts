@@ -22,6 +22,7 @@ export type Blog = {
   key: string;
   title: string;
   slug: string;
+  image: string;
   postDate: Date;
   description: string;
 };
