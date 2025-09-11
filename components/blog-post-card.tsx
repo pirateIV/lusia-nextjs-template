@@ -4,11 +4,12 @@ import { EllipsisVertical } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 import { Blog } from "@/types";
 import Image from "next/image";
+import { cx } from "@/utils/cx";
 
 type BlogPostCardProps = {
   blog: Blog;
-  className?: string | undefined;
-  category: string;
+  className?: string;
+  category?: string;
   imageSize?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
@@ -22,10 +23,13 @@ export default function BlogPostCard({
   // Generate post through the "postId" prop
   return (
     <div
-      className={`group flex flex-col text-[10px] gap-2.5 py-3.75 not-[p]:font-semibold w-full ${className}`}
+      className={cx(
+        "group flex flex-col text-[10px] gap-2.5 py-3.75 not-[p]:font-semibold w-full",
+        className
+      )}
       {...props}
     >
-      <div className="relative aspect-[1.2/1] @3xl:aspect-[1.7/1] shrink-0 overflow-hidden @3xl:w-[250px]">
+      <div className="relative aspect-[1.2/1] @3xl:aspect-[1.7/1] shrink-0 overflow-hidden @3xl:w-62.5">
         <Image
           src={blog.image}
           sizes={imageSize || "calc(min(314px,100vw))"}

@@ -17,15 +17,15 @@ export const siteLinks: SiteLink = {
     },
     {
       text: "Travel",
-      url: "/travel",
+      url: "/category/travel",
     },
     {
       text: "Lifestyle",
-      url: "/lifestyle",
+      url: "/category/lifestyle",
     },
     {
       text: "Destination",
-      url: "/destination",
+      url: "/category/destination",
     },
   ],
   socials: [

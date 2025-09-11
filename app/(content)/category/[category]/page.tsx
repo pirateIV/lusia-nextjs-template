@@ -1,10 +1,11 @@
 import React from "react";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import { data, descriptions } from "@/data/blog";
 import BlogPostCard from "@/components/blog-post-card";
 import Divider from "@/components/layout/divider";
-import Image from "next/image";
-import Link from "next/link";
+import Sidebar from "@/components/layout/sidebar";
+import { data, descriptions } from "@/data/blog";
+import PostCard from "@/components/post-card";
 
 interface PageProps {
   params: Promise<{ category: string }>;
@@ -30,12 +31,13 @@ export default async function BlogCategoryPage({ params }: PageProps) {
             </h1>
             <p>{description}</p>
           </div>
-          <div className="w-full md:w-[30%] shrink-0">
+          <div className="size-full overflow-hidden md:w-[30%] shrink-0">
             <Image
               src={`/images/${category}.jpg`}
-              className="size-full border border-background-dark/30"
               width="366"
               height="203"
+              sizes="(min-width: 1200px) max(min(max(100vw - 120px, 1px), 1220px) * 0.3, 1px), (max-width: 809.98px) max(min(max(100vw - 40px, 1px), 1220px), 1px), (min-width: 810px) and (max-width: 1199.98px) max(min(max(100vw - 56px, 1px), 1220px) * 0.3, 1px)"
+              className="size-full aspect-[366/203] object-cover border border-background-dark/30"
               alt={category}
             />
           </div>
@@ -56,54 +58,16 @@ export default async function BlogCategoryPage({ params }: PageProps) {
               <Divider />
               <div className="@container">
                 {blogCategoryData.map((blog) => (
-                  <BlogPostCard
+                  <PostCard
                     key={blog.key}
+                    variant="md"
                     blog={blog}
-                    imageSize="287.5px"
-                    className="@3xl:flex-row @3xl:[flex-flow:row] @3xl:items-center @3xl:*:[[data-content]]:px-3.75 @3xl:*:[[data-content]]:py-5"
                     category={category}
                   />
                 ))}
               </div>
             </div>
-
-            <div className="self-start lg:w-[30%] lg:sticky lg:top-25">
-              <div className="space-y-2.5">
-                <h3 className="font-semibold text-lg font-playfair-display">
-                  About me
-                </h3>
-                <div className="size-35">
-                  <Image
-                    src="/images/author.png"
-                    className="rounded-full"
-                    width="800"
-                    height="800"
-                    alt="author's profile image"
-                  />
-                </div>
-                <h3 className="font-semibold text-lg">Lusia BierHoff</h3>
-                <p className="text-sm">
-                  I'm a traveler, wanderer, explorer, and adventurer of life's
-                  great journey.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl">Categories</h3>
-
-                <ul>
-                  <li>
-                    <Link href="/travel">Travel</Link>
-                  </li>
-                  <li>
-                    <Link href="/lifestyle">Lifestyle</Link>
-                  </li>
-                  <li>
-                    <Link href="/destination">Destination</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <Sidebar />
           </div>
         </div>
       </div>

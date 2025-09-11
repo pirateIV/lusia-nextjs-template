@@ -1,6 +1,8 @@
 import React from "react";
 import { blogs } from "@/data/blog";
 import BlogPostCard from "@/components/blog-post-card";
+import { getCategory } from "@/helpers/posts";
+import PostCard from "@/components/post-card";
 
 export default function Blogs() {
   return (
@@ -8,9 +10,9 @@ export default function Blogs() {
       <div className="max-w-305 w-full">
         <div className="grid grid-cols-[minmax(100px,1fr)] md:grid-cols-[repeat(2,minmax(100px,1fr))] lg:grid-cols-[repeat(3,minmax(100px,1fr))] gap-5">
           {blogs.map((blog) => (
-            <BlogPostCard
+            <PostCard
               key={blog.key}
-              category={blog.key.split("-")[0]}
+              category={getCategory(blog.key)}
               blog={blog}
             />
           ))}
