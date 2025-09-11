@@ -289,3 +289,5 @@ export const blogs: Blog[] = sortPostsByDate([
   ...data.lifestyle,
   ...data.destination,
 ]);
+
+console.log(blogs)
