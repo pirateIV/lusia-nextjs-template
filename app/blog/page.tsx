@@ -1,6 +1,5 @@
 import React from "react";
 import { blogs } from "@/data/blog";
-import BlogPostCard from "@/components/blog-post-card";
 import { getCategory } from "@/helpers/posts";
 import PostCard from "@/components/post-card";
 

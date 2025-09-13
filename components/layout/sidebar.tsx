@@ -3,7 +3,6 @@ import Image from "next/image";
 import { getCategory, getPostsByKey } from "@/helpers/posts";
 import { data } from "@/data/blog";
 import ActiveLink from "../active-link";
-import BlogPostCard from "../blog-post-card";
 import PostCard from "../post-card";
 
 const blogCategories = Object.keys(data);
