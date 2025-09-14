@@ -49,7 +49,7 @@ export default function Sidebar() {
         {trendingPosts.map((post) => (
           <PostCard
             key={post.key}
-            size="sm"
+            variant="sm"
             category={getCategory(post.key)}
             blog={post}
           />

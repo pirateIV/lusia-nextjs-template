@@ -60,7 +60,7 @@ export default async function BlogCategoryPage({ params }: PageProps) {
                 {blogCategoryData.map((blog) => (
                   <PostCard
                     key={blog.key}
-                    size="md"
+                    variant="md"
                     blog={blog}
                     category={category}
                   />
