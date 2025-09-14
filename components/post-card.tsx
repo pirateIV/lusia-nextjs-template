@@ -11,14 +11,14 @@ const postCardVariants = cva(
   "group w-full flex gap-2.5 text-[10px] not-[p]:font-semibold",
   {
     variants: {
-      variant: {
+      size: {
         default: "flex-col",
         md: "flex-col @3xl:flex-row @3xl:[flex-flow:row] @3xl:items-center",
-        sm: "",
+        sm: "py-3.75",
       },
     },
     defaultVariants: {
-      variant: "default",
+      size: "default",
     },
   }
 );
@@ -35,32 +35,26 @@ export default function PostCard({
   blog,
   className,
   category,
-  variant = "default",
+  size = "default",
   ...props
 }: PostCardProps) {
   return (
-    <div
-      className={cx(
-        postCardVariants({ variant, className }),
-        variant !== "sm" && "py-3.75"
-      )}
-      {...props}
-    >
+    <div className={cx(postCardVariants({ size, className }))} {...props}>
       <div
         className={cx(
           "relative aspect-[1.2/1] shrink-0 overflow-hidden",
-          variant === "md" && "@3xl:aspect-[1.7/1] @3xl:w-62.5 h-full",
-          variant === "sm" && "size-25"
+          size === "md" && "@3xl:aspect-[1.7/1] @3xl:w-62.5 h-full",
+          size === "sm" && "size-25"
         )}
       >
         <Image
           src={blog.image}
           sizes={
-            variant === "default"
+            size === "default"
               ? "calc(min(314px,100vw))"
-              : variant === "md"
+              : size === "md"
               ? "287.5px"
-              : "115px"
+              : "115px" 
           }
           className={cx(
             "size-full object-cover scale-[115%]",
@@ -74,13 +68,13 @@ export default function PostCard({
       <div
         className={cx(
           "flex flex-col gap-2.5",
-          variant === "md" && "@3xl:px-3.75 @3xl:py-5"
+          size === "md" && "@3xl:px-3.75 @3xl:py-5"
         )}
       >
         <div className="flex items-center text-accent-orange gap-0.5">
           <span>{formatDate(blog.postDate)}</span>
           <EllipsisVertical className="size-2.5" />
-          {variant === "md" ? (
+          {size === "md" ? (
             <Link
               href={`/category/${category}`}
               className="uppercase underline"
@@ -95,12 +89,12 @@ export default function PostCard({
           href={`/blog/${blog.slug}`}
           className={cx(
             "inline-block font-playfair-display hover:underline",
-            variant === "sm" ? "text-lg/[1.2em]" : "text-[22px]/[1.2em]"
+            size === "sm" ? "text-lg/[1.2em]" : "text-[22px]/[1.2em]"
           )}
         >
           {blog.title}
         </Link>
-        {variant !== "sm" && (
+        {size !== "sm" && (
           <p className="text-sm font-normal">{blog.description}</p>
         )}
       </div>
