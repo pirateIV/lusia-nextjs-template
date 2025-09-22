@@ -54,7 +54,7 @@ export default function Navbar() {
                   className="group inline-flex items-center gap-1"
                 >
                   <social.icon />
-                  <span className="font-montserrat text-xs font-medium w-0 opacity-0 group-hover:w-auto group-hover:opacity-100 transition-[width] origin-left pointer-events-none">
+                  <span className="font-montserrat text-xs font-medium max-w-0 opacity-0 group-hover:max-w-fit group-hover:opacity-100 transition-all origin-left pointer-events-none">
                     {social.name}
                   </span>
                 </Link>

@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [new URL("https://images.unsplash.com/**")],
+  },
+};
 
 const withMDX = createMDX({
   extension: /\.(md|mdx)$/,
@@ -9,4 +13,3 @@ const withMDX = createMDX({
 });
 
 export default withMDX(nextConfig);
-  
