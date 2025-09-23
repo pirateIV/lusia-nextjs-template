@@ -1,11 +1,13 @@
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
+import { PostCategory } from "@/types";
 
 export interface PostFrontmatter {
   title: string;
   slug: string;
-  date: string;
+  date: Date;
+  category: PostCategory;
   image: string;
   description: string;
   [key: string]: any;

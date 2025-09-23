@@ -7,6 +7,8 @@ type Page = {
   url: string;
 };
 
+export type PostCategory = "travel" | "lifestyle" | "destination";
+
 type Social = {
   name: string;
   icon: React.ComponentType;

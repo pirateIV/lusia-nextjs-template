@@ -23,6 +23,7 @@ export default function Navbar() {
                 height="24"
                 sizes="83.48px"
                 alt="logo"
+                priority
               />
             </div>
           </Link>

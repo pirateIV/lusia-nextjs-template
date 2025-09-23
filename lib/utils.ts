@@ -7,7 +7,7 @@ export function sortPostsByDate(blogsArray: Blog[]): Blog[] {
 }
 
 export function formatDate(date: Date): string {
-  return date.toLocaleDateString("en-US", {
+  return new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
     day: "numeric",

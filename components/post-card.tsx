@@ -6,6 +6,7 @@ import { EllipsisVertical } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 import { cx } from "@/utils/cx";
 import { Blog } from "@/types";
+import DateCategory from "./date-category";
 
 const postCardVariants = cva(
   "group w-full flex gap-2.5 text-[10px] not-[p]:font-semibold",
@@ -77,20 +78,11 @@ export default function PostCard({
           variant === "md" && "@3xl:px-3.75 @3xl:py-5"
         )}
       >
-        <div className="flex items-center text-accent-orange gap-0.5">
-          <span>{formatDate(blog.postDate)}</span>
-          <EllipsisVertical className="size-2.5" />
-          {variant === "md" ? (
-            <Link
-              href={`/category/${category}`}
-              className="uppercase underline"
-            >
-              {category}
-            </Link>
-          ) : (
-            <span className="uppercase">{category}</span>
-          )}
-        </div>
+        <DateCategory
+          variant={variant}
+          category={category}
+          date={blog.postDate}
+        />
         <Link
           href={`/blog/${blog.slug}`}
           className={cx(
