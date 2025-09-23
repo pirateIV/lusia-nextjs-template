@@ -5,7 +5,9 @@ export function getPostSlugs(): string[] {
 }
 
 export function getMDXSlugKey(s: string) {
-  return blogs.find(({ slug }) => slug === s)?.key;
+  const match = blogs.find(({ slug }) => slug === s);
+  if (!match) throw new Error(`Not blog key found for slug: ${s}`);
+  return match.key;
 }
 
 export function getPostsByKey(keys: string[]) {

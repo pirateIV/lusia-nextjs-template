@@ -4,7 +4,10 @@ import matter from "gray-matter";
 
 export interface PostFrontmatter {
   title: string;
+  slug: string;
   date: string;
+  image: string;
+  description: string;
   [key: string]: any;
 }
 
