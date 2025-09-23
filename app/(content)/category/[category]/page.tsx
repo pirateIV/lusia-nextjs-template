@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import BlogPostCard from "@/components/blog-post-card";
 import Divider from "@/components/layout/divider";
 import Sidebar from "@/components/layout/sidebar";
 import { data, descriptions } from "@/data/blog";
