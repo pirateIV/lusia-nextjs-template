@@ -2,8 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { cva, VariantProps } from "class-variance-authority";
-import { EllipsisVertical } from "lucide-react";
-import { formatDate } from "@/lib/utils";
 import { cx } from "@/utils/cx";
 import { Blog } from "@/types";
 import DateCategory from "./date-category";

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Divider from "@/components/layout/divider";
 import Sidebar from "@/components/layout/sidebar";
-import { data, descriptions } from "@/data/blog";
+import { blogData, descriptions } from "@/data/blog";
 import PostCard from "@/components/post-card";
 
 interface PageProps {
@@ -13,8 +13,8 @@ interface PageProps {
 export default async function BlogCategoryPage({ params }: PageProps) {
   const { category } = await params;
 
-  const blogCategoryData = data[category as keyof typeof data];
-  const description = descriptions[category as keyof typeof data];
+  const blogCategoryData = blogData[category as keyof typeof blogData];
+  const description = descriptions[category as keyof typeof blogData];
 
   if (!blogCategoryData) {
     return notFound();

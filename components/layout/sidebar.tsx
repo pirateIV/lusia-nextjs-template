@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import { getCategory, getPostsByKey } from "@/helpers/posts";
-import { data } from "@/data/blog";
+import { blogData } from "@/data/blog";
 import ActiveLink from "../active-link";
 import PostCard from "../post-card";
 
-const blogCategories = Object.keys(data);
+const blogCategories = Object.keys(blogData);
 
 const trendingPosts = getPostsByKey([
   "travel-06",

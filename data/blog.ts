@@ -1,7 +1,7 @@
 import { sortPostsByDate } from "@/lib/utils";
-import { Blog } from "@/types";
+import { Blog, PostCategory } from "@/types";
 
-export const data = {
+export const blogData: Record<PostCategory, Blog[]> = {
   travel: [
     {
       key: "travel-01",
@@ -285,9 +285,9 @@ export const descriptions = {
 };
 
 export const blogs: Blog[] = sortPostsByDate([
-  ...data.travel,
-  ...data.lifestyle,
-  ...data.destination,
+  ...blogData.travel,
+  ...blogData.lifestyle,
+  ...blogData.destination,
 ]);
 
-console.log(blogs)
+console.log(blogs);

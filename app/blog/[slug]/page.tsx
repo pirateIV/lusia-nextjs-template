@@ -35,14 +35,14 @@ export default async function Blog({
   return (
     <>
       <Seo title={title} description={description} image={image} />
-      <div className="px-15 py-12.5">
+      <div className="px-5 py-7.5 md:px-7 md:py-10 lg:px-15 lg:py-12.5">
         <div className="w-full max-w-305 mx-auto">
           <div className="pt-7.5 pb-12.5">
             <Image
               src={image}
               width={600}
               height={400}
-              className="w-full object-cover aspect-auto"
+              className="w-full object-cover aspect-[2/1]"
               priority
               alt=""
             />
@@ -63,7 +63,7 @@ export default async function Blog({
             <Sidebar />
           </div>
           <Divider />
-          <RelatedPosts filter={slug} category={category} />
+          <RelatedPosts slug={slug} category={category} />
         </div>
       </div>
     </>

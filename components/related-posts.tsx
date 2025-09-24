@@ -1,32 +1,37 @@
 import React from "react";
 import { PostCategory } from "@/types";
-import { blogs } from "@/data/blog";
+import { blogs, blogData } from "@/data/blog";
 import PostCard from "./post-card";
 
 type RelatedPostsProps = {
   category: PostCategory;
-  filter?: string;
+  slug?: string;
 };
 
-export default function RelatedPosts({ category, filter }: RelatedPostsProps) {
+export default function RelatedPosts({ category, slug }: RelatedPostsProps) {
   return (
     <div className="pt-12.5 pb-25">
       <div className="flex flex-col-reverse">
-        <h2 className="text-[34px] font-bold">Recent posts</h2>
+        <h2 className="text-[34px] font-bold">Related posts</h2>
         <p className="text-sm text-accent-orange font-semibold">
           Stay up-to-date
         </p>
       </div>
 
-      <div className="@container grid lg:grid-cols-4 gap-5">
-        {blogs.slice(0, 4).map((blog) => (
-          <PostCard
-            key={blog.key}
-            variant="md"
-            category={category}
-            blog={blog}
-          />
-        ))}
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {blogData[category]
+          .filter((blog) => blog.slug !== slug)
+          .slice(0, 4)
+          .map((blog) => (
+            <div className="@container">
+              <PostCard
+                key={blog.key}
+                variant="md"
+                category={category}
+                blog={blog}
+              />
+            </div>
+          ))}
       </div>
     </div>
   );
