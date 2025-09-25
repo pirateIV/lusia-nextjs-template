@@ -123,66 +123,66 @@ export const blogData: Record<PostCategory, Post[]> = {
       description:
         "Embrace the Danish concept of hygge to create warmth, comfort, and contentment in your home.",
     },
+    // {
+    //   key: "lifestyle-05",
+    //   title: "Adventure Travel: Thrill-Seeker's Guide to Extreme Experiences 2",
+    //   slug: "adventure-travel-thrill-seeker-s-guide-to-extreme-experiences-2",
+    //   image: "/images/lifestyle-05.jpg",
+    //   postDate: new Date("2025-02-09"),
+    //   description:
+    //     "Part two of our guide to the world's most exhilarating adventure travel experiences.",
+    // },
     {
       key: "lifestyle-05",
-      title: "Adventure Travel: Thrill-Seeker's Guide to Extreme Experiences 2",
-      slug: "adventure-travel-thrill-seeker-s-guide-to-extreme-experiences-2",
-      image: "/images/lifestyle-05.jpg",
-      postDate: new Date("2025-02-09"),
-      description:
-        "Part two of our guide to the world's most exhilarating adventure travel experiences.",
-    },
-    {
-      key: "lifestyle-06",
       title: "Adventure Travel: Thrill-Seeker's Guide to Extreme Experiences",
       slug: "adventure-travel-thrill-seeker-s-guide-to-extreme-experiences",
-      image: "/images/lifestyle-06.jpg",
+      image: "/images/lifestyle-05.jpg",
       postDate: new Date("2025-02-08"),
       description:
         "Discover heart-pounding adventures for those who crave excitement and challenge.",
     },
     {
-      key: "lifestyle-07",
+      key: "lifestyle-06",
       title:
         "Northern Lights Adventures: Chasing Aurora Borealis in Scandinavia",
       slug: "northern-lights-adventures-chasing-aurora-borealis-in-scandinavia",
-      image: "/images/lifestyle-07.jpg",
+      image: "/images/lifestyle-06.jpg",
       postDate: new Date("2025-02-08"),
       description:
         "Your complete guide to witnessing the magical Northern Lights in Scandinavia.",
     },
     {
-      key: "lifestyle-08",
+      key: "lifestyle-07",
       title: "Digital Detox Retreats: Reconnect with Nature and Yourself",
       slug: "digital-detox-retreats-reconnect-with-nature-and-yourself",
-      image: "/images/lifestyle-08.jpg",
+      image: "/images/lifestyle-07.jpg",
       postDate: new Date("2025-02-06"),
       description:
         "Discover retreats that help you unplug from technology and reconnect with the natural world.",
     },
     {
-      key: "lifestyle-09",
+      key: "lifestyle-08",
       title: "Traveling with Pets: Tips for a Stress-Free Journey",
       slug: "traveling-with-pets-tips-for-a-stress-free-journey",
-      image: "/images/lifestyle-09.jpg",
+      image: "/images/lifestyle-08.jpg",
       postDate: new Date("2025-02-06"),
       description:
         "Essential advice for making travel with your furry companions safe and enjoyable.",
     },
     {
-      key: "lifestyle-10",
+      key: "lifestyle-09",
       title: "Minimalist Lifestyle: Decluttering Your Life for More Freedom",
       slug: "minimalist-lifestyle-decluttering-your-life-for-more-freedom",
-      image: "/images/lifestyle-10.jpg",
+      image: "/images/lifestyle-09.jpg",
       postDate: new Date("2025-02-06"),
       description:
         "How embracing minimalism can create space for what truly matters in your life.",
     },
     {
-      key: "lifestyle-11",
+      key: "lifestyle-10",
       title: "Healthy Habits for Travelers: Staying Fit on the Road",
       slug: "healthy-habits-for-travelers-staying-fit-on-the-road",
-      image: "/images/lifestyle-11.jpg",
+      image: "/images/lifestyle-10.jpg",
       postDate: new Date("2025-02-06"),
       description:
         "Practical tips to maintain your health and wellness while traveling.",
@@ -289,5 +289,3 @@ export const blogs: Post[] = sortPostsByDate([
   ...blogData.lifestyle,
   ...blogData.destination,
 ]);
-
-console.log(blogs);
