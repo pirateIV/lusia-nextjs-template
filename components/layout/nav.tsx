@@ -12,7 +12,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="py-8.5 px-16 sticky top-0 bg-white z-50">
+    <nav className="px-5 py-7 sticky top-0 bg-white z-50 md:p-7 lg:px-16 lg:py-8.5">
       <div className="flex items-center justify-center">
         <div className="max-w-305 w-full flex items-center justify-between">
           <Link href="/">
@@ -28,7 +28,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <ul className="flex flex-nowrap items-center gap-7.5 transition-all">
+          <ul className="hidden flex-nowrap items-center gap-7.5 transition-all lg:flex">
             {siteLinks.pages.map((page) => (
               <li key={page.text}>
                 <Link
@@ -45,25 +45,32 @@ export default function Navbar() {
           </ul>
 
           <ul className="flex items-center gap-2.5">
-            {siteLinks.socials.map((social) => (
-              <li
-                key={social.name}
-                className="inline-flex items-center justify-center"
-              >
-                <Link
-                  href={social.url}
-                  className="group inline-flex items-center gap-1"
+            <ul className="hidden items-center gap-2.5 lg:flex">
+              {siteLinks.socials.map((social) => (
+                <li
+                  key={social.name}
+                  className="inline-flex items-center justify-center"
                 >
-                  <social.icon />
-                  <span className="font-montserrat text-xs font-medium max-w-0 opacity-0 group-hover:max-w-fit group-hover:opacity-100 transition-all origin-left pointer-events-none">
-                    {social.name}
-                  </span>
-                </Link>
-              </li>
-            ))}
-            <li className="ml-2.5">
+                  <Link
+                    href={social.url}
+                    className="group inline-flex items-center gap-1"
+                  >
+                    <social.icon />
+                    <span className="font-montserrat text-xs font-medium max-w-0 opacity-0 group-hover:max-w-fit group-hover:opacity-100 transition-all origin-left pointer-events-none">
+                      {social.name}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <li>
               <button className="inline-flex items-center justify-center border p-1.25 rounded-full">
-                <Icons.Magnifier />
+                <Icons.Magnifier size="18" />
+              </button>
+            </li>
+            <li className="inline-flex lg:hidden">
+              <button className="inline-flex items-center justify-center border p-1.25 rounded-full">
+                <Icons.Menu size="18" />
               </button>
             </li>
           </ul>

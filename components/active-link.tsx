@@ -21,7 +21,7 @@ export default function ActiveLink({
   ...props
 }: ActiveLinkProps) {
   const pathname = usePathname();
-  const isActive = pathname.startsWith(href);
+  const isActive = pathname.startsWith(href) || pathname.includes(href);
 
   return (
     <Link

@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Divider from "@/components/layout/divider";
-import Sidebar from "@/components/layout/sidebar";
 import { blogData, descriptions } from "@/data/blog";
 import PostCard from "@/components/post-card";
+import Sidebar from "@/components/layout/sidebar/sidebar";
 
 interface PageProps {
   params: Promise<{ category: string }>;

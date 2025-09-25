@@ -1,5 +1,5 @@
 import React from "react";
-import NewsletterSubscription from "../newsletter-subscription";
+import NewsletterSubscription from "./newsletter-subscription";
 
 export default function Footer() {
   return (

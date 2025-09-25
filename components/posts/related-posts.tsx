@@ -1,7 +1,7 @@
 import React from "react";
 import { PostCategory } from "@/types";
 import { blogs, blogData } from "@/data/blog";
-import PostCard from "./post-card";
+import PostCard from "../post-card";
 
 type RelatedPostsProps = {
   category: PostCategory;
@@ -23,13 +23,8 @@ export default function RelatedPosts({ category, slug }: RelatedPostsProps) {
           .filter((blog) => blog.slug !== slug)
           .slice(0, 4)
           .map((blog) => (
-            <div className="@container">
-              <PostCard
-                key={blog.key}
-                variant="md"
-                category={category}
-                blog={blog}
-              />
+            <div className="@container" key={blog.key}>
+              <PostCard category={category} blog={blog} />
             </div>
           ))}
       </div>

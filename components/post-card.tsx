@@ -12,7 +12,7 @@ const postCardVariants = cva(
     variants: {
       variant: {
         default: "flex-col",
-        md: "flex-col @3xl:flex-row @3xl:[flex-flow:row] @3xl:items-center",
+        md: "flex-col @2xl:flex-row @2xl:[flex-flow:row] @2xl:items-center",
         sm: "",
       },
     },
@@ -48,7 +48,7 @@ export default function PostCard({
       <div
         className={cx(
           "relative aspect-[1.2/1] shrink-0 overflow-hidden",
-          variant === "md" && "@3xl:aspect-[1.7/1] @3xl:w-62.5 h-full",
+          variant === "md" && "@2xl:aspect-[1.7/1] @2xl:w-62.5 h-full",
           variant === "sm" && "size-25"
         )}
       >
@@ -73,7 +73,7 @@ export default function PostCard({
       <div
         className={cx(
           "flex flex-col gap-2.5",
-          variant === "md" && "@3xl:px-3.75 @3xl:py-5"
+          variant === "md" && "@2xl:px-3.75 @2xl:py-5"
         )}
       >
         <DateCategory
@@ -84,8 +84,8 @@ export default function PostCard({
         <Link
           href={`/blog/${blog.slug}`}
           className={cx(
-            "inline-block font-playfair-display hover:underline",
-            variant === "sm" ? "text-lg/[1.2em]" : "text-[22px]/[1.2em]"
+            "inline-block font-playfair-display underline hover:decoration-background-dark/50 text-lg/[1.2em]",
+            variant !== "sm" && "md:text-xl/[1.2em] lg:text-[22px]/[1.2em]"
           )}
         >
           {blog.title}
