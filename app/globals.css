@@ -27,6 +27,7 @@
 
   --breakpoint-*: initial;
 
+  --breakpoint-sm: 375px;
   --breakpoint-md: 810px;
   --breakpoint-lg: 1199px;
 }
@@ -38,6 +39,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--font-playfair-display) !important;
+  font-weight: var(--font-weight-semibold);
 }

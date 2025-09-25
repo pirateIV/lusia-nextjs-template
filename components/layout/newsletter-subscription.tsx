@@ -2,7 +2,7 @@ import React from "react";
 
 export default function NewsletterSubscription() {
   return (
-    <div className="py-12.5 px-15 bg-background-light">
+    <div className="px-5 py-10 lg:py-12.5 lg:px-15 bg-background-light">
       <div className="max-w-305 mx-auto">
         <div className="mx-auto flex flex-1 flex-col items-center gap-10 text-center">
           <div className="lg:w-[35%]">
