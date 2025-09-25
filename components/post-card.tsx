@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { cva, VariantProps } from "class-variance-authority";
 import { cx } from "@/utils/cx";
-import { Blog } from "@/types";
+import { Post } from "@/types";
 import DateCategory from "./date-category";
 
 const postCardVariants = cva(
@@ -25,7 +25,7 @@ const postCardVariants = cva(
 export interface PostCardProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof postCardVariants> {
-  blog: Blog;
+  blog: Post;
   className?: string;
   category?: string;
 }

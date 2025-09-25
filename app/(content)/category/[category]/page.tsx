@@ -23,7 +23,7 @@ export default async function BlogCategoryPage({ params }: PageProps) {
   return (
     <div className="flex items-center justify-center px-7 lg:px-15">
       <div className="max-w-305 w-full">
-        <div className="flex flex-col items-center gap-7.5 py-12.5 md:flex-row lg:gap-12.5">
+        <div className="flex items-center gap-7.5 py-12.5 lg:gap-12.5 max-md:flex-col">
           <div className="space-y-2.5">
             <h1 className="capitalize font-playfair-display text-[40px] font-semibold">
               {category}

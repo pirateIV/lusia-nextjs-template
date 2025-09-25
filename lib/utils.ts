@@ -1,6 +1,6 @@
-import { Blog } from "@/types";
+import { Post } from "@/types";
 
-export function sortPostsByDate(blogsArray: Blog[]): Blog[] {
+export function sortPostsByDate(blogsArray: Post[]): Post[] {
   return [...blogsArray].sort(
     (a, b) => new Date(b.postDate).getTime() - new Date(a.postDate).getTime()
   );

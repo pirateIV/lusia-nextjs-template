@@ -2,12 +2,12 @@ import React from "react";
 import Link from "next/link";
 import { EllipsisVertical } from "lucide-react";
 import { formatDate } from "@/lib/utils";
-import { Blog } from "@/types";
+import { Post } from "@/types";
 import Image from "next/image";
 import { cx } from "@/utils/cx";
 
 type BlogPostCardProps = {
-  blog: Blog;
+  blog: Post;
   className?: string;
   category?: string;
   imageSize?: string;

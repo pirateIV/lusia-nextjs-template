@@ -20,7 +20,7 @@ export type SiteLink = {
   socials: Social[];
 };
 
-export type Blog = {
+export type Post = {
   key: string;
   title: string;
   slug: string;
