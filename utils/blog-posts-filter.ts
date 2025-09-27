@@ -1,3 +1,4 @@
+import { blogs } from "@/data/blog";
 import { Post, PostCategory } from "@/types";
 
 // interface Posts {
@@ -55,4 +56,12 @@ export const getStories = (
 
   filteredPosts = filteredPosts.slice(0, limit);
   return filteredPosts;
+};
+
+export const getRecentPosts = (posts: Post[], limit = 4) => {
+  return posts
+    .sort(
+      (a, b) => new Date(b.postDate).getTime() - new Date(a.postDate).getTime()
+    )
+    .slice(0, limit);
 };

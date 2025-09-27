@@ -7,6 +7,7 @@ type Page = {
   url: string;
 };
 
+export type CardVariants = "default" | "md" | "sm" | null;
 export type PostCategory = "travel" | "lifestyle" | "destination";
 
 type Social = {

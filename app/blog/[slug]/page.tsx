@@ -12,7 +12,7 @@ import RelatedPosts from "@/components/posts/related-posts";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
-  return posts.map(({ slug }) => ({ slug }));
+  return posts.map(({ slug }) => ({ slug: getMDXSlugKey(slug) }));
 }
 
 export default async function Blog({

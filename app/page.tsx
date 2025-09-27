@@ -1,8 +1,9 @@
-import Footer from "@/components/layout/footer";
+import RecentPosts from "@/components/posts/recent-posts";
 
 export default function Home() {
   return (
-    <div>
+    <div className="max-w-305 mx-auto @container">
+      <RecentPosts />
     </div>
   );
 }

@@ -2,10 +2,11 @@ import React from "react";
 import Link from "next/link";
 import { EllipsisVertical } from "lucide-react";
 import { formatDate } from "@/lib/utils";
+import { CardVariants } from "@/types";
 
 type DateCategoryProps = {
   date: Date;
-  variant?: "default" | "md" | "sm" | null;
+  variant?: CardVariants;
   category: string | undefined;
 };
 
