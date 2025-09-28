@@ -4,15 +4,35 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug } from "@/lib/post";
 import { getMDXSlugKey } from "@/helpers/posts";
-import Seo from "@/components/seo";
 import Divider from "@/components/layout/divider";
 import DateCategory from "@/components/date-category";
 import Sidebar from "@/components/layout/sidebar/sidebar";
 import RelatedPosts from "@/components/posts/related-posts";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = getPostBySlug(getMDXSlugKey(slug));
+
+  if (!post) return {};
+
+  const { title, description, image } = post.frontmatter;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      images: [{ url: image }],
+    },
+  };
+}
+
 export async function generateStaticParams() {
   const posts = getAllPosts();
-  return posts.map(({ slug }) => ({ slug: getMDXSlugKey(slug) }));
+  return posts.map(({ frontmatter }) => ({ slug: frontmatter.slug }));
 }
 
 export default async function Blog({
@@ -34,8 +54,6 @@ export default async function Blog({
 
   return (
     <>
-      <Seo title={title} description={description} image={image} />
-
       <div className="px-5 py-7.5 md:px-7 md:pb-10 lg:px-15 lg:pb-12.5">
         <div className="w-full max-w-305 mx-auto">
           {/* Hero Image */}
