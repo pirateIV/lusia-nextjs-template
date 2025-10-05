@@ -12,7 +12,7 @@ export default function ButtonLink({
   return (
     <Link
       href={href}
-      className="group h-9 flex items-center gap-2.5 px-3.75 py-2.5 rounded-[100px] bg-background-dark text-white hover:gap-1.25 hover:bg-transparent transition-all duration-300"
+      className="group h-9 w-fit flex items-center gap-2.5 px-3.75 py-2.5 rounded-[100px] bg-background-dark text-white hover:gap-1.25 hover:p-0 hover:bg-transparent transition-all duration-300"
     >
       <span className="font-semibold text-xs transition-all duration-300 uppercase group-hover:px-3.75 group-hover:py-2.5 group-hover:bg-background-dark group-hover:rounded-[100px]">
         {children}
