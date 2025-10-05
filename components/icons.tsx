@@ -21,5 +21,8 @@ export const Icons = {
 
   Menu: ({size = 20, ...props}: IconProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 256 256" focusable="false" {...props}><g><path d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64Zm8,48H168a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm176,24H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm-48,40H40a8,8,0,0,0,0,16H168a8,8,0,0,0,0-16Z"></path></g></svg>
+  ),
+  ArrowUpRight: ({size = 20, ...props}: IconProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" {...props}><g color="rgb(255, 255, 255)"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></g></svg>  
   )
 }
