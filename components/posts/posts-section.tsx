@@ -11,14 +11,14 @@ export default function PostsSection({
   category,
   variant = "default",
 }: {
-  title: string;
+  title?: string;
   data: Post[];
   category?: string;
   variant?: CardVariants;
 }) {
   return (
     <div className="pt-12.5 pb-25">
-      <PostHeader title={title} />
+      {title && <PostHeader title={title} />}
 
       <PostsWrapper variant={variant}>
         {data?.map((blog) => (
